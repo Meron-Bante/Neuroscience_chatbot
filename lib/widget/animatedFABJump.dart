@@ -80,7 +80,7 @@ class _AnimatedFABJumpState extends State<AnimatedFABJump>
                   border: Border.all(color: Colors.green, width: 2)),
               margin: EdgeInsets.only(
                   left: MediaQuery.of(context).size.width * 0.3),
-              width: MediaQuery.of(context).size.width * 0.25,
+              width: MediaQuery.of(context).size.width * 0.8,
               height: MediaQuery.of(context).size.height * 0.7,
               // color: Colors.grey,
               child: Column(
