@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "BITS BOT",
+              "NeuroScience BOT",
               style: TextStyle(color: Colors.white, fontSize: 14),
             ),
             Text(
