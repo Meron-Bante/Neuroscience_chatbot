@@ -50,7 +50,10 @@ class _MyChatHomeState extends State<MyChatHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chat App'),
+        title: Text('Medical ChatBot',
+            style: TextStyle(
+              fontSize: 20.0,
+            )),
       ),
       body: Column(
         children: [
@@ -60,40 +63,40 @@ class _MyChatHomeState extends State<MyChatHome> {
               itemBuilder: (context, index) {
                 String messageText = messages[index]['message'].text.text[0];
                 bool isUserMessage = messages[index]['isUserMessage'];
-                
+
                 return isUserMessage
-          ? ListTile(
-              title: Align(
-                alignment: Alignment.centerRight,
-                child: Container(
-                  padding: EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Text(
-                    messageText,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-            )
-          : ListTile(
-              title: Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  padding: EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Text(
-                    messageText,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-            );
+                    ? ListTile(
+                        title: Align(
+                          alignment: Alignment.centerRight,
+                          child: Container(
+                            padding: EdgeInsets.all(8.0),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 76, 141, 154),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Text(
+                              messageText,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      )
+                    : ListTile(
+                        title: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Container(
+                            padding: EdgeInsets.all(8.0),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 65, 127, 67),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Text(
+                              messageText,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      );
               },
             ),
           ),
