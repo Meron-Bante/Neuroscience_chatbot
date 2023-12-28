@@ -59,10 +59,41 @@ class _MyChatHomeState extends State<MyChatHome> {
               itemCount: messages.length,
               itemBuilder: (context, index) {
                 String messageText = messages[index]['message'].text.text[0];
-
-                return ListTile(
-                  title: Text(messageText),
-                );
+                bool isUserMessage = messages[index]['isUserMessage'];
+                
+                return isUserMessage
+          ? ListTile(
+              title: Align(
+                alignment: Alignment.centerRight,
+                child: Container(
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Text(
+                    messageText,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            )
+          : ListTile(
+              title: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Text(
+                    messageText,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            );
               },
             ),
           ),
